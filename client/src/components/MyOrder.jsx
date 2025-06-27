@@ -6,23 +6,22 @@ const MyOrder = () => {
     const [myOrders, setMyOrders] = useState([])
     const {currency,user, axios} = useAppContext()
 
-    const fetchMyOrders = async()=>{
-        try {
-            const {data} = await axios.get('/api/order/user')
-            if (data.success) {
-                setMyOrders(data.orders)
+    useEffect(() => {
+        const fetchMyOrders = async () => {
+            try {
+                const { data } = await axios.get('/api/order/user');
+                if (data.success) {
+                    setMyOrders(data.orders);
+                }
+            } catch (error) {
+                console.log(error);
             }
-        } catch (error) {
-            console.log(error);
-            
-        }
-    }
+        };
 
-    useEffect(()=>{
-       if (user) {
-        fetchMyOrders()
-       }
-    },[user])
+        if (user) {
+            fetchMyOrders();
+        }
+    }, [user, axios]);
   return (
     <div className='mt-16 pb-16'>
       <div className='flex flex-col items-end w-max mb-8'>
