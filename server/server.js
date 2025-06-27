@@ -20,7 +20,7 @@ await connectDB()
 await connectCloudinary()
 
 // Allow multiple origins
-const allowedOrigin = ['http://localhost:5173']
+const allowedOrigin = ['http://localhost:5173', 'https://petshop-pi-five.vercel.app']
 
 app.post('/stripe',express.raw({type:'application/json'}), stripeWebhooks)
 
