@@ -54,13 +54,13 @@ export const categories = [
     bgColor: "#fee0e0",
   },
   {
-    text:"Dog Food",
+    text:"Dog Toy",
     path: "product",
     image: dogfood,
     bgColor: "#e0feee",
   },
   {
-    text:"Dog Food",
+    text:"Dog Medicine",
     path: "product",
     image: dogfood,
     bgColor: "#e0fee0",
